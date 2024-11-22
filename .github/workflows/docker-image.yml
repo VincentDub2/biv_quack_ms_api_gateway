@@ -25,9 +25,9 @@ jobs:
     # Construit l'image Docker
     - name: Build Docker Image
       run: |
-        docker build -t biv_quack/service-users:latest -f Dockerfile .
+        docker build -t vincentdub/service-users:latest -f Dockerfile .
 
     # Pousse l'image dans le repository centralisé
     - name: Push Docker Image
       run: |
-        docker push biv_quack/service-users:latest
+        docker push vincentdub/service-users:latest
