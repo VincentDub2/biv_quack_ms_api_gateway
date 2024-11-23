@@ -46,6 +46,10 @@ public class GatewayConfig {
                         .path("/api/v1/evaluation/**") // Path of the request to match
                         .filters(f -> f.stripPrefix(3)) // Remove the first part of the path
                         .uri("lb://SERVICE-EVALUATION") // Destination URI of the service
+                ).route("notification-route", r -> r
+                        .path("/api/v1/notification/**") // Path of the request to match
+                        .filters(f -> f.stripPrefix(3)) // Remove the first part of the path
+                        .uri("lb://SERVICE-NOTIFICATION") // Destination URI of the service
                 ).build();
     }
 
